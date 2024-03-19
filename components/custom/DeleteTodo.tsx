@@ -12,25 +12,23 @@ import {
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
   import { Button } from "@/components/ui/button"
-import { signOut } from "next-auth/react"
 
-  export function LogOut() {
+  export function DeleteTodo({ callback }: { callback: () => void }) {
     return (
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Button className="block" variant='ghost'><span className="bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">Log Out</span></Button>
+          <Button className="block" variant='outline'>Delete</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogTitle>Are you sure you want to delete this todo?</AlertDialogTitle>
             <AlertDialogDescription>
-              You will be logged out of your account immediately and then your session ends,
-              but good news you can log on back to your account, do you still want to continue.
+                This action cannot be undone. This will permanently delete your todo and remove your data from our servers, do you want to continue...
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={() => signOut()}>Log Out</AlertDialogAction>
+            <AlertDialogAction onClick={callback}>Delete</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

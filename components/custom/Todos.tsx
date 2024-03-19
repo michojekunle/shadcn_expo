@@ -44,9 +44,11 @@ const Todos: FC<Props> = ({ todos }) => {
 
   // Rendering the Todo List component
   return (
-    <main className="flex mx-auto max-w-xl w-full min-h-screen flex-col items-center p-16">
-      <div className="text-5xl font-medium">To-do app</div>
-      <div className="w-full flex flex-col mt-8 gap-2">
+    <main className="flex mx-auto max-w-xl w-full flex-col items-center px-4 py-11 md:p-16">
+      <h1 className='text-4xl md:text-7xl font-mono font-bold text-center bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent'>Todos</h1>
+      {/* Adding Todo component for creating new todos */}
+      <AddTodo createTodo={createTodo} />
+      <div className="w-full flex flex-col mt-8 mb-5 gap-4 ">
         {/* Mapping through todoItems and rendering Todo component for each */}
         {todoItems.map((todo) => (
           <Todo
@@ -58,8 +60,6 @@ const Todos: FC<Props> = ({ todos }) => {
           />
         ))}
       </div>
-      {/* Adding Todo component for creating new todos */}
-      <AddTodo createTodo={createTodo} />
     </main>
   );
 };

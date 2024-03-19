@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`w-full min-h-screen overflow-hidden ${inter.className}`}>
+      <body className={`w-full min-h-screen ${inter.className}`}>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
