@@ -1,6 +1,6 @@
 import {getData} from "@/actions/todoActions";
 import Todos from "@/components/custom/Todos";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "../api/auth/[...nextauth]/options";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
