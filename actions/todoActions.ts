@@ -4,10 +4,27 @@ import {revalidatePath} from "next/cache";
 
 import db from "@/db/drizzle";
 import {todo} from "@/db/schema";
+import { seed } from "@/db/seed";
 
 export const getData = async () => {
-  const data = await db.select().from(todo);
-  return data;
+
+  try {
+    const todos = await db.select().from(todo);
+    return todos;
+  } catch (e: any) {
+    if (e.message === `relation "users" does not exist`) {
+      console.log(
+        'Table does not exist, creating and seeding it with dummy data now...'
+      )
+      // Table is not created yet
+      await seed()
+      const startTime = Date.now()
+      const todos = await db.select().from(todo)
+      return todos;
+    } else {
+      throw e
+    }
+  }
 };
 
 export const addTodo = async (id: number, text: string) => {
