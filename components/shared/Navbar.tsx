@@ -25,7 +25,7 @@ export function Navbar() {
         </div>
         <div className="flex items-center gap-3">
           {status === 'authenticated' ? (
-            <div className='flex items-center gap-3'>
+            <div className='flex items-center gap-1 md:gap-3'>
               <UserAvatar url={session.user?.image!} name={session.user?.name!}/>
               <LogOut/>
             </div>

@@ -10,7 +10,7 @@ import {
   }
   export function UserAvatar({ url, name }: { url: string, name: string }) {
     return (
-      <Avatar>
+      <Avatar className="hidden sm:block">
         <AvatarImage src={url} alt={url} />
         <AvatarFallback>{getFallbackFromName(name)}</AvatarFallback>
       </Avatar>

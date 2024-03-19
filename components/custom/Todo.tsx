@@ -63,7 +63,7 @@ const Todo: FC<Props> = ({
 
   // Rendering the Todo component
   return (
-    <div className="flex items-center gap-2 p-4 border-gray-100/10 border-solid border rounded-lg">
+    <div className="flex items-center gap-2 p-4 border-slate-200 dark:border-slate-800 border-solid border rounded-lg">
       {/* Checkbox for marking the todo as done */}
       <Checkbox
         // className="text-blue-200 rounded-sm h-4 w-4"
