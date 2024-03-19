@@ -18,7 +18,7 @@ import { signOut } from "next-auth/react"
     return (
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Button className="hidden sm:block" variant='ghost'><span className="bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">Log Out</span></Button>
+          <Button className="*block" variant='ghost'><span className="bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">Log Out</span></Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
